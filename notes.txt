@@ -1,0 +1,6 @@
+- login box that appears at the root of the application
+- The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
+- the number of people who voted for that option;
+- the percentage of people who voted for that option.
+- The option selected by the logged in user should be clearly marked.
+- if a user creates a poll and then the same or another user tries to access that poll by its url, the user should be asked to sign in and then be shown a 404 page. Please keep in mind that new polls will not be accessible at their url

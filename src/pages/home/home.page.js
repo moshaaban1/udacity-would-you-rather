@@ -17,7 +17,7 @@ function HomePage(props) {
    const { userQuestions, getQuestions } = props;
    const { unansweredQuestions, answeredQuestions } = userQuestions;
 
-   const [activeTab, setActiveTab] = useState(0);
+   const [activeTab, setActiveTab] = useState(1);
 
    useEffect(() => {
       getQuestions();

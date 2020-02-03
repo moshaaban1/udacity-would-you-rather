@@ -18,13 +18,17 @@ const QuestionPage = ({
 }) => {
    const [questionAnswered, setQuestionAnswered] = useState(false);
    const [value, setValue] = useState("optionOne");
+   const [question, setQuestion] = useState(null);
 
    const questionId = match.params.questionId;
-   const question = questions.filter(question => question.id === questionId)[0];
 
    useEffect(() => {
+      const question = questions.filter(
+         question => question.id === questionId
+      )[0];
+      setQuestion(question);
       checkIfUserAnswerQuestion();
-   }, []);
+   }, [questions]);
 
    const handleChange = event => {
       setValue(event.target.value);
@@ -42,7 +46,6 @@ const QuestionPage = ({
          qid: questionId,
          answer: value
       });
-      setQuestionAnswered(true);
    };
 
    return (

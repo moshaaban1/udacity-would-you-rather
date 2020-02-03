@@ -15,6 +15,10 @@ const questionsReducer = (state = INITIAL_STATE, action) => {
          return {
             ...state
          };
+      case types.CREATE_NEW_QUESTION:
+         return {
+            ...state
+         };
       default:
          return state;
    }

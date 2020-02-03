@@ -32,6 +32,12 @@ export const selectQuestionsArrayAfterTransformation = createSelector(
    questions => questions
 );
 
+// export const selectQuestionByAuthor = author =>
+//    createSelector(
+//       [addAvatarAndUserNameToQuestions],
+//       questions => questions.filter(question => question.author == author)
+//    );
+
 export const selectUserQuestions = userName =>
    createSelector(
       [addAvatarAndUserNameToQuestions],
@@ -51,3 +57,11 @@ export const selectUserQuestions = userName =>
          return { unansweredQuestions, answeredQuestions };
       }
    );
+
+// export const selectQuestionResults = questionId =>
+//    createSelector(
+//       [addAvatarAndUserNameToQuestions],
+//       questions => {
+
+//       }
+//    );

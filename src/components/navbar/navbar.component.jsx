@@ -31,6 +31,7 @@ const Navbar = props => {
                         logout
                      </NavItem>
                      <NavMenu>
+                        <div style={{ marginRight: "10px" }}>{user.name} </div>
                         <Avatar alt="Remy Sharp" src={user.avatarURL} />
                      </NavMenu>
                   </>
