@@ -1,8 +1,6 @@
 import style from "styled-components";
 
 export const QuestionsContainer = style.div`
-    width: 700px;
-    margin: auto;
     border: 1px solid #dddddd;
     border-radius: 5px;
 `;

@@ -9,19 +9,17 @@ import {
    QuestionFlex
 } from "./question.styles";
 
-export default function Question(props) {
-   const { name, avatar, children, answered } = props;
+export default props => {
+   const { headerLabel, name, avatarURL, children } = props;
    return (
       <QuestionBox>
-         <QuestionHeader>
-            {name} {answered ? "asks" : "asked"}:
-         </QuestionHeader>
+         <QuestionHeader>{headerLabel}</QuestionHeader>
          <QuestionFlex>
             <ImageContainer>
-               <QuestionImage src={avatar} alt={name} />
+               <QuestionImage src={avatarURL} alt={name} />
             </ImageContainer>
             <QuestionContent>{children}</QuestionContent>
          </QuestionFlex>
       </QuestionBox>
    );
-}
+};

@@ -23,7 +23,7 @@ const addAvatarAndUserNameToQuestions = createSelector(
       questions.map(question => ({
          ...question,
          name: users[question.author].name,
-         avatar: users[question.author].avatarURL
+         avatarURL: users[question.author].avatarURL
       }))
 );
 

@@ -17,7 +17,6 @@ import {
 
 const Navbar = props => {
    const { user, logout } = props;
-   console.log(user);
    return (
       <AppBar>
          <Container>

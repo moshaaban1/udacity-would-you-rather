@@ -9,10 +9,7 @@ export default function QuestionPreview(props) {
    return (
       <Question {...props}>
          <h3>Would you rather ...</h3>
-         <ul>
-            <li>{props.optionOne.text}</li>
-            <li>{props.optionTwo.text}</li>
-         </ul>
+         <p>....{props.optionOne.text}.....</p>
          <Button
             outline
             full

@@ -11,6 +11,10 @@ const questionsReducer = (state = INITIAL_STATE, action) => {
             ...state,
             questions: action.payload
          };
+      case types.SAVE_QUESTION_ANSWER:
+         return {
+            ...state
+         };
       default:
          return state;
    }

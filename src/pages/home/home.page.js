@@ -30,13 +30,13 @@ function HomePage(props) {
                onClick={() => setActiveTab(0)}
                active={activeTab === 0 ? "active" : ""}
             >
-               Unanswered Questions
+               Answered Questions
             </Tab>
             <Tab
                onClick={() => setActiveTab(1)}
                active={activeTab === 1 ? "active" : ""}
             >
-               Answered Questions
+               Unanswered Questions
             </Tab>
          </Tabs>
 
@@ -46,7 +46,7 @@ function HomePage(props) {
                   <QuestionPreview
                      key={question.id}
                      {...question}
-                     answered={true}
+                     headerLabel={question.name + " asked"}
                   />
                ))}
             </TabPanel>
@@ -55,7 +55,7 @@ function HomePage(props) {
                   <QuestionPreview
                      key={question.id}
                      {...question}
-                     answered={false}
+                     headerLabel={question.name + " asks"}
                   />
                ))}
             </TabPanel>
