@@ -19,25 +19,23 @@ const QuestionPage = ({
    const [questionAnswered, setQuestionAnswered] = useState(false);
    const [value, setValue] = useState("optionOne");
    const [question, setQuestion] = useState(null);
-
    const questionId = match.params.questionId;
 
    useEffect(() => {
       const question = questions.filter(
          question => question.id === questionId
       )[0];
+      const checkIfUserAnswerQuestion = () => {
+         const currentUserAnswers = users[currentUser.id].answers;
+         const questionState = currentUserAnswers[questionId] ? true : false;
+         setQuestionAnswered(questionState);
+      };
       setQuestion(question);
       checkIfUserAnswerQuestion();
-   }, [questions]);
+   }, [questions, question, users, currentUser, questionId]);
 
    const handleChange = event => {
       setValue(event.target.value);
-   };
-
-   const checkIfUserAnswerQuestion = () => {
-      const currentUserAnswers = users[currentUser.id].answers;
-      const questionState = currentUserAnswers[questionId] ? true : false;
-      setQuestionAnswered(questionState);
    };
 
    const handleSaveQuestion = () => {

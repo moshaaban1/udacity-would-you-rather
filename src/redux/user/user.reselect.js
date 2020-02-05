@@ -25,13 +25,17 @@ export const selectUsersScore = createSelector(
          const answers = Object.keys(user.answers).length;
          const questions = user.questions.length;
          const totalScore = answers + questions;
-         usersScore.push({
+         const userObject = {
             ...user,
             answers,
             questions,
             totalScore
-         });
+         };
+         usersScore.push(userObject);
       });
-      return usersScore;
+      const sortUsersScore = usersScore.sort((a, b) =>
+         a.totalScore < b.totalScore ? 1 : -1
+      );
+      return sortUsersScore;
    }
 );

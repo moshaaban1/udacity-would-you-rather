@@ -9,13 +9,12 @@ import {
    selectUsers
 } from "../../redux/user/user.reselect";
 
-const LoginPage = props => {
-   const { userLogin, users, getUsers, usersObject } = props;
-
+const LoginPage = ({ userLogin, users, getUsers, usersObject }) => {
    const [user, setUser] = useState(null);
 
    useEffect(() => {
       getUsers();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    const handleChange = e => {

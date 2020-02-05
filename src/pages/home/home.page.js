@@ -21,6 +21,7 @@ function HomePage(props) {
 
    useEffect(() => {
       getQuestions();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
    return (

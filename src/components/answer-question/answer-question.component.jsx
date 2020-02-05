@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Question from "../question/question.component";
 import Button from "../button/button.component";

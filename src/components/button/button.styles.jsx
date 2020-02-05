@@ -11,10 +11,6 @@ const textTransform = ({ textTransform }) => {
    }
 };
 
-const ButtonLarge = css`
-   padding: "20px 35px";
-`;
-
 const ButtonInverted = css`
    background: #000;
    color: #fff;

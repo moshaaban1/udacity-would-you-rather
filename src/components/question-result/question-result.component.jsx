@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
 import Question from "../question/question.component";
 import {
@@ -7,18 +8,17 @@ import {
    OptionResult
 } from "./question-result.styles";
 
-export default function QuestionResult(props) {
+const QuestionResult = props => {
    const { optionOne, optionTwo } = props;
    const [votesCount, setVotesCount] = useState(0);
 
    useEffect(() => {
+      const calcQuestionVotes = () => {
+         const votesCount = optionOne.votes.length + optionTwo.votes.length;
+         setVotesCount(votesCount);
+      };
       calcQuestionVotes();
-   }, []);
-
-   const calcQuestionVotes = () => {
-      const votesCount = optionOne.votes.length + optionTwo.votes.length;
-      setVotesCount(votesCount);
-   };
+   }, [optionOne, optionTwo]);
 
    return (
       <Question {...props} headerLabel={"Asked by " + props.name}>
@@ -51,4 +51,6 @@ export default function QuestionResult(props) {
          </OptionResult>
       </Question>
    );
-}
+};
+
+export default connect()(QuestionResult);
