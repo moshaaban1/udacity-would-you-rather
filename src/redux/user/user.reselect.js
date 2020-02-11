@@ -7,6 +7,11 @@ export const selectCurrentUser = createSelector(
    user => user.currentUser
 );
 
+export const getCurrentUserAnswered = createSelector(
+   [selectUserReducer],
+   user => user.currentUserAnswered
+)
+
 export const selectUsers = createSelector(
    [selectUserReducer],
    data => data.users

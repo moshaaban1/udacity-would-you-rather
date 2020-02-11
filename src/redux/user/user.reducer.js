@@ -2,7 +2,8 @@ import types from "./user.types";
 
 const INITIAL_STATE = {
    currentUser: null,
-   users: null
+   users: null,
+   currentUserAnswered: {}
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +18,15 @@ const userReducer = (state = INITIAL_STATE, action) => {
             ...state,
             users: action.payload
          };
+      case types.UPDATE_CURRENT_USER_ANSWERED: {
+         return {
+            ...state,
+            currentUserAnswered: {
+               ...state.currentUserAnswered,
+               ...action.payload
+            }
+         }
+      }
       default:
          return state;
    }

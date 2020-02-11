@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import { saveQuestionAnswerAsync } from "../../redux/questions/questions.actions";
+import { updateCurrentUserAnswered } from "../../redux/user/user.actions";
 import { selectQuestionsArrayAfterTransformation } from "../../redux/questions/questions.reselect";
 import { selectCurrentUser, selectUsers } from "../../redux/user/user.reselect";
 
@@ -14,7 +15,8 @@ const QuestionPage = ({
    match,
    currentUser,
    saveQuestion,
-   users
+   users,
+   updateCurrentUserAnswered
 }) => {
    const [questionAnswered, setQuestionAnswered] = useState(false);
    const [value, setValue] = useState("optionOne");
@@ -44,6 +46,7 @@ const QuestionPage = ({
          qid: questionId,
          answer: value
       });
+      updateCurrentUserAnswered({[questionId]: {answer: value}})
    };
 
    return (
@@ -71,7 +74,8 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-   saveQuestion: payload => dispatch(saveQuestionAnswerAsync(payload))
+   saveQuestion: payload => dispatch(saveQuestionAnswerAsync(payload)),
+   updateCurrentUserAnswered: payload => dispatch(updateCurrentUserAnswered(payload))
 });
 
 export default connect(

@@ -11,6 +11,11 @@ const getUsers = payload => ({
    payload
 });
 
+export const updateCurrentUserAnswered = payload => ({
+   type: types.UPDATE_CURRENT_USER_ANSWERED,
+   payload
+});
+
 export const getUsersAsync = () => dispatch => {
    _getUsers().then(res => {
       dispatch(getUsers(res));

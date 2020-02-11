@@ -4,6 +4,7 @@ export const OptionResult = styled.div`
    border: 1px solid #ddd;
    padding: 10px;
    margin-bottom: 7px;
+   ${(props) => props.current ? `border: 2px solid #000` : ''}
 `;
 
 export const ProgressContainer = styled.div`

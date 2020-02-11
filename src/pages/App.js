@@ -31,7 +31,7 @@ const App = ({ user }) => (
                            user ? (
                               <Route {...route} key={route.name} />
                            ) : (
-                              <Redirect to="/login" />
+                              <Redirect push to="/login" />
                            )
                         }
                      />

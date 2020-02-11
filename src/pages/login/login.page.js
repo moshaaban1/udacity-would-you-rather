@@ -8,10 +8,11 @@ import {
    selectGetUsersToArray,
    selectUsers
 } from "../../redux/user/user.reselect";
+import { useHistory } from "react-router-dom";
 
 const LoginPage = ({ userLogin, users, getUsers, usersObject }) => {
    const [user, setUser] = useState(null);
-
+   const history = useHistory()
    useEffect(() => {
       getUsers();
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -24,8 +25,8 @@ const LoginPage = ({ userLogin, users, getUsers, usersObject }) => {
 
    const handleSubmit = () => {
       userLogin(user);
+      history.goBack(-2)
    };
-
    return (
       <div>
          {users ? (
